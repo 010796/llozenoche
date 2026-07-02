@@ -39,7 +39,7 @@ body {
 .hero { text-align: center; padding: 12px 0 24px; }
 .eyebrow { color: var(--gold-soft); letter-spacing: .08em; font-size: clamp(14px, 2.5vw, 18px); }
 h1 { margin: 8px 0; color: var(--gold-soft); font-size: clamp(30px, 7vw, 68px); font-weight: 400; letter-spacing: .07em; text-transform: uppercase; }
-.subtitle { color: var(--muted); font-size: 18px; }
+.subtitle { color: var(--muted); font-size: 18px; font-style: italic; }
 .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
 .btn {
   border: 1px solid rgba(214,184,117,.65);
@@ -86,16 +86,23 @@ h1 { margin: 8px 0; color: var(--gold-soft); font-size: clamp(30px, 7vw, 68px); 
 }
 @keyframes sweep { to { transform: rotate(360deg); } }
 .hint { text-align: center; color: var(--muted); margin: 12px 0 0; font-size: 14px; }
-.qr-box {
-  margin-top: 26px;
-  border: 1px solid rgba(214,184,117,.35);
+.phrase-card {
+  margin: 28px auto 0;
+  width: min(560px, 100%);
+  border: 1px solid rgba(214,184,117,.22);
   border-radius: 22px;
-  padding: 22px;
-  background: rgba(255,255,255,.035);
+  padding: 24px;
+  background: rgba(255,255,255,.025);
   text-align: center;
 }
-.qr-box h2 { margin-top: 0; color: var(--gold-soft); font-weight: 400; }
-.qr-text { color: var(--gold-soft); font-size: 20px; letter-spacing: .04em; }
+.phrase-card p {
+  margin: 0;
+  color: var(--gold-soft);
+  font-size: clamp(22px, 5vw, 38px);
+  line-height: 1.25;
+  letter-spacing: .06em;
+  font-style: italic;
+}
 dialog {
   width: min(760px, calc(100% - 28px));
   border: 1px solid rgba(214,184,117,.55);

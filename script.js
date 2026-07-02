@@ -1,5 +1,6 @@
 const shell = document.getElementById('imageShell');
 const poster = document.getElementById('poster');
+const enterBtn = document.getElementById('enterBtn');
 const animateBtn = document.getElementById('animateBtn');
 const poemBtn = document.getElementById('poemBtn');
 const dialog = document.getElementById('poemDialog');
@@ -10,14 +11,20 @@ let dragging = false;
 let startX = 0, startY = 0;
 let offsetX = 0, offsetY = 0;
 
-shell.addEventListener('click', () => {
+function resetZoom() {
+  zoomed = false;
+  shell.classList.remove('zoomed');
+  offsetX = 0; offsetY = 0;
+  poster.style.transform = '';
+}
+
+function toggleZoom() {
   zoomed = !zoomed;
   shell.classList.toggle('zoomed', zoomed);
-  if (!zoomed) {
-    offsetX = 0; offsetY = 0;
-    poster.style.transform = '';
-  }
-});
+  if (!zoomed) resetZoom();
+}
+
+shell.addEventListener('click', toggleZoom);
 
 shell.addEventListener('pointerdown', (e) => {
   if (!zoomed) return;
@@ -36,10 +43,18 @@ shell.addEventListener('pointermove', (e) => {
 
 shell.addEventListener('pointerup', () => { dragging = false; });
 
-animateBtn.addEventListener('click', () => {
+function toggleMotion() {
+  resetZoom();
   shell.classList.toggle('animate');
-  animateBtn.textContent = shell.classList.contains('animate') ? 'Pausar movimiento' : 'Ver cielo en movimiento';
+  animateBtn.textContent = shell.classList.contains('animate') ? 'Still' : 'Explore';
+}
+
+enterBtn.addEventListener('click', () => {
+  shell.classList.add('animate');
+  animateBtn.textContent = 'Still';
+  document.querySelector('.poster-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 
+animateBtn.addEventListener('click', toggleMotion);
 poemBtn.addEventListener('click', () => dialog.showModal());
 closePoem.addEventListener('click', () => dialog.close());
