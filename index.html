@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa estelar · 2 de julio de 1996</title>
+  <meta name="description" content="Mapa estelar interactivo: 2 de julio de 1996 · 21:00 h · Ciudad de México" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">2 de julio de 1996 · 21:00 h · Ciudad de México</p>
+      <h1>«Elogio de la fugacidad»</h1>
+      <p class="subtitle">Un mapa estelar para guardar un instante.</p>
+      <div class="actions">
+        <button id="animateBtn" class="btn primary">Ver cielo en movimiento</button>
+        <button id="poemBtn" class="btn">Leer poema</button>
+      </div>
+    </section>
+
+    <section class="poster-card" aria-label="Mapa estelar interactivo">
+      <div class="image-shell" id="imageShell">
+        <img id="poster" src="mapa-estelar.png" alt="Mapa estelar del 2 de julio de 1996 a las 21:00 h en Ciudad de México" />
+        <div class="glow" aria-hidden="true"></div>
+      </div>
+      <p class="hint">Toca o haz clic sobre la imagen para acercar. Arrastra para explorar.</p>
+    </section>
+
+    <section class="qr-box">
+      <h2>Para el póster impreso</h2>
+      <p>Cuando publiques esta página, genera un código QR con su enlace y colócalo en el diseño con la frase:</p>
+      <p class="qr-text">Escanea para ver el cielo en movimiento</p>
+    </section>
+  </main>
+
+  <dialog id="poemDialog">
+    <button class="close" id="closePoem" aria-label="Cerrar">×</button>
+    <h2>«Elogio de la fugacidad»</h2>
+    <p class="author">José Emilio Pacheco</p>
+    <div class="poem">
+      <p>Triste que todo pase…<br>
+      Pero también qué dicha este gran cambio perpetuo.<br>
+      Si pudiéramos<br>
+      Detener el instante<br>
+      Todo sería mucho más terrible.</p>
+      <p>¿Pueden imaginar a Fausto de 1844, digamos,<br>
+      Que hubiera congelado el tiempo en un momento preciso?<br>
+      En él hasta la más libre de las mujeres<br>
+      Viviría prisionera de sus quince hijos<br>
+      (Sin contar a los muertos antes de un año),<br>
+      Las horas infinitas ante el fogón, la costura,<br>
+      Los cien mil platos sucios, la ropa inmunda<br>
+      —Y todo lo demás, sin luz eléctrica y sin agua corriente.<br>
+      Cuerpos sólo dolor, ignorantes de la anestesia,<br>
+      Que olían muy mal y rara vez se bañaban.</p>
+      <p>Y aún después de todo esto, como perfectos imbéciles,<br>
+      Nos atrevemos a decir irredentos:<br>
+      «Qué gran tristeza la fugacidad,<br>
+      ¿Por qué tenemos que pasar como nubes?»</p>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
